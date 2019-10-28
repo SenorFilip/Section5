@@ -1,7 +1,8 @@
 <div class="container">
   <app-cockpit
     (bpCreated)="onBlueprintAdded($event)"
-    (serverCreated)="onServerAdded($event)"></app-cockpit>
+    (serverCreated)="onServerAdded($event)">
+  </app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
@@ -18,7 +19,7 @@
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"
         [name]="serverElement.name">
-        <p>
+        <p #contentParagraph>
           <strong
             *ngIf="serverElement.type === 'server'"
             style="color: red">
